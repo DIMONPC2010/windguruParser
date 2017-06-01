@@ -1,0 +1,17 @@
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\WindguruParser.exe.config
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\WindguruParser.exe
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\WindguruParser.pdb
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\EntityFramework.dll
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\System.Data.SQLite.dll
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\System.Data.SQLite.EF6.dll
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\System.Data.SQLite.Linq.dll
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\EntityFramework.xml
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\bin\Debug\System.Data.SQLite.xml
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\obj\Debug\WindguruParser.csprojResolveAssemblyReference.cache
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\obj\Debug\WindguruParser.Properties.Resources.resources
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\obj\Debug\WindguruParser.csproj.GenerateResource.Cache
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\obj\Debug\WindguruParser.exe
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\obj\Debug\WindguruParser.pdb
+c:\users\dimon\documents\visual studio 2015\Projects\WindguruParser\WindguruParser\obj\Debug\WindguruParser.Form1.resources

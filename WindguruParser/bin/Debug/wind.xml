@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<WindData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Email>dimonpc777@gmail.com</Email>
+  <WindSpeed>1-80</WindSpeed>
+  <WindDirection>WNW</WindDirection>
+  <Gust>1-80</Gust>
+</WindData>
