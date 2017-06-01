@@ -13,7 +13,7 @@ namespace WindguruParser
 {
     class DbInit
     {
-        Thread thread;
+        public Thread thread { get; private set; }
         DbInitData dbInitData;
         public DbInit(String dbFileName, SQLiteConnection m_dbConn, SQLiteCommand m_sqlCmd)
         {

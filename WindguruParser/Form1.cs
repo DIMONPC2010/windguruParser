@@ -26,7 +26,7 @@ namespace WindguruParser
         private String Gust;
         private String Email;
         private XmlSerializer formatter;
-        private EmailSender sender;
+        private EmailSender sendEmail;
 
         public Form1()
         {
@@ -188,7 +188,9 @@ namespace WindguruParser
                     formatter.Serialize(fs, wind);
                 }
 
-                sender = new EmailSender(wind);
+                if (sendEmail!=null)
+                    sendEmail.thread.Abort();
+                sendEmail = new EmailSender(wind);
             }
             else
             {
@@ -205,8 +207,11 @@ namespace WindguruParser
         }
      private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            SharedRes.mtx.WaitOne();
+            sendEmail.thread.Abort();
+            db.thread.Abort();
             System.Environment.Exit(1);
-
+            
         }
     }
     }

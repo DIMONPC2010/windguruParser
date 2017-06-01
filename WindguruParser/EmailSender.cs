@@ -16,7 +16,8 @@ namespace WindguruParser
 {
     class EmailSender
     {
-        Thread thread;
+        public Thread thread { get; private set; }
+
         public EmailSender(WindData wind)
         {
             thread = new Thread(this.send);
