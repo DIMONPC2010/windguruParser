@@ -21,6 +21,7 @@ namespace WindguruParser
         public EmailSender(WindData wind)
         {
             thread = new Thread(this.send);
+            thread.IsBackground = true;
             thread.Start(wind);
         }
         void send(object wind)

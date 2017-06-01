@@ -18,6 +18,7 @@ namespace WindguruParser
         public DbInit(String dbFileName, SQLiteConnection m_dbConn, SQLiteCommand m_sqlCmd)
         {
             thread = new Thread(this.InitDataBase);
+            thread.IsBackground = true;
             dbInitData = new DbInitData(dbFileName, m_dbConn, m_sqlCmd);
             thread.Start(dbInitData);//передача параметра в поток
         }
