@@ -188,8 +188,7 @@ namespace WindguruParser
                     formatter.Serialize(fs, wind);
                 }
 
-                if (sendEmail!=null)
-                    sendEmail.thread.Abort();
+
                 sendEmail = new EmailSender(wind);
             }
             else
