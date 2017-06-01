@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvWeatherViewer = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbWindSPD = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -39,14 +46,6 @@
             this.btApply = new System.Windows.Forms.Button();
             this.tbGust = new System.Windows.Forms.TextBox();
             this.lbGust = new System.Windows.Forms.Label();
-            this.btUpdate = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWeatherViewer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,8 +62,45 @@
             this.Column7});
             this.dgvWeatherViewer.Location = new System.Drawing.Point(0, 75);
             this.dgvWeatherViewer.Name = "dgvWeatherViewer";
-            this.dgvWeatherViewer.Size = new System.Drawing.Size(745, 229);
+            this.dgvWeatherViewer.Size = new System.Drawing.Size(745, 274);
             this.dgvWeatherViewer.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 90;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Date";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 110;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Weekday";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Temperature";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Gust";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Wind speed";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Wind direction";
+            this.Column7.Name = "Column7";
             // 
             // tbEmail
             // 
@@ -150,59 +186,11 @@
             this.lbGust.TabIndex = 9;
             this.lbGust.Text = "Gust";
             // 
-            // btUpdate
-            // 
-            this.btUpdate.Location = new System.Drawing.Point(-28, 301);
-            this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(786, 42);
-            this.btUpdate.TabIndex = 11;
-            this.btUpdate.Text = "Update Table";
-            this.btUpdate.UseVisualStyleBackColor = true;
-            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 90;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 110;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Weekday";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Temperature";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Gust";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Wind speed";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Wind direction";
-            this.Column7.Name = "Column7";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 342);
-            this.Controls.Add(this.btUpdate);
+            this.ClientSize = new System.Drawing.Size(745, 349);
             this.Controls.Add(this.tbGust);
             this.Controls.Add(this.lbGust);
             this.Controls.Add(this.btApply);
@@ -236,7 +224,6 @@
         private System.Windows.Forms.Button btApply;
         private System.Windows.Forms.TextBox tbGust;
         private System.Windows.Forms.Label lbGust;
-        private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

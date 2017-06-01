@@ -13,12 +13,14 @@ namespace WindguruParser
         public String dbFileName { get; set; }
         public SQLiteConnection m_dbConn { get; set; }
         public SQLiteCommand m_sqlCmd { get; set; }
+        public DataGridView m_dgv { get; set; }
 
-        public DbInitData(String _dbFileName, SQLiteConnection _dbConn, SQLiteCommand _sqlCmd)
+        public DbInitData(String _dbFileName, SQLiteConnection _dbConn, SQLiteCommand _sqlCmd, DataGridView _dgv)
         {
             dbFileName = _dbFileName;
             m_dbConn = _dbConn;
             m_sqlCmd = _sqlCmd;
+            m_dgv = _dgv;
         }
     }
 }

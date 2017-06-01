@@ -38,7 +38,7 @@ namespace WindguruParser
             m_dbConn = new SQLiteConnection();
             m_sqlCmd = new SQLiteCommand();
             dbFileName = "WindguruDB";
-            db = new DbInit(dbFileName, m_dbConn, m_sqlCmd);
+            db = new DbInit(dbFileName, m_dbConn, m_sqlCmd, dgvWeatherViewer);
             Email = "";
             formatter = new XmlSerializer(typeof(WindData));
 
@@ -75,60 +75,6 @@ namespace WindguruParser
                 Email=s;
         }
 
-        private void btUpdate_Click(object sender, EventArgs e)
-        {
-            SharedRes.mtx.WaitOne();
-            if (!File.Exists(dbFileName))
-                MessageBox.Show("Please, create DB and blank table");
-
-            try
-            {
-                m_dbConn = new SQLiteConnection("Data Source=" + dbFileName + ";Version=3;");
-                m_dbConn.Open();
-                m_sqlCmd.Connection = m_dbConn;
-            }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
-            DataTable dTable = new DataTable();
-            String sqlQuery;
-
-            if (m_dbConn.State != ConnectionState.Open)
-            {
-                MessageBox.Show("Open connection with database");
-                return;
-            }
-
-            try
-            {
-                sqlQuery = "SELECT * FROM Catalog";
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, m_dbConn);
-                adapter.Fill(dTable);
-
-                if (dTable.Rows.Count > 0)
-                {
-                    dgvWeatherViewer.Rows.Clear();
-
-                    for (int i = 0; i < dTable.Rows.Count; i++)
-                    {
-                        //Win32.AllocConsole();
-                        //Console.WriteLine(dTable.Rows[i].ItemArray);
-                        dgvWeatherViewer.Rows.Add(dTable.Rows[i].ItemArray);
-                    }
-
-                }
-                else
-                    MessageBox.Show("Database is empty");
-            }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            m_dbConn.Close();
-            SharedRes.mtx.ReleaseMutex();
-        }
 
         private void btApply_Click(object sender, EventArgs e)
         {

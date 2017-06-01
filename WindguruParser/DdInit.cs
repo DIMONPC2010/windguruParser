@@ -15,11 +15,11 @@ namespace WindguruParser
     {
         public Thread thread { get; private set; }
         DbInitData dbInitData;
-        public DbInit(String dbFileName, SQLiteConnection m_dbConn, SQLiteCommand m_sqlCmd)
+        public DbInit(String dbFileName, SQLiteConnection m_dbConn, SQLiteCommand m_sqlCmd, DataGridView m_dgv)
         {
             thread = new Thread(this.InitDataBase);
             thread.IsBackground = true;
-            dbInitData = new DbInitData(dbFileName, m_dbConn, m_sqlCmd);
+            dbInitData = new DbInitData(dbFileName, m_dbConn, m_sqlCmd, m_dgv);
             thread.Start(dbInitData);//передача параметра в поток
         }
         private void InitDataBase(object dbInitData)
@@ -96,6 +96,42 @@ namespace WindguruParser
                     {
                         MessageBox.Show("Error: " + ex.Message);
                     }
+
+
+                    DataTable dTable = new DataTable();
+                    String sqlQuery;
+
+                    if (data.m_dbConn.State != ConnectionState.Open)
+                    {
+                        MessageBox.Show("Open connection with database");
+                        return;
+                    }
+
+                    try
+                    {
+                        sqlQuery = "SELECT * FROM Catalog";
+                        SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlQuery, data.m_dbConn);
+                        adapter.Fill(dTable);
+
+                        if (dTable.Rows.Count > 0)
+                        {
+                            data.m_dgv.BeginInvoke((MethodInvoker)(() => data.m_dgv.Rows.Clear()));
+
+                            for (int i = 0; i < dTable.Rows.Count; i++)
+                            {
+                                data.m_dgv.BeginInvoke((MethodInvoker)(() => data.m_dgv.Rows.Add(dTable.Rows[i].ItemArray)));
+                                Thread.Sleep(60);
+                            }
+
+                        }
+                        else
+                            MessageBox.Show("Database is empty");
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+
 
                     data.m_dbConn.Close();
                     SharedRes.mtx.ReleaseMutex();
