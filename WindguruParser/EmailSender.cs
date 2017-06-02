@@ -115,7 +115,7 @@ namespace WindguruParser
                         for (int i = 0; i < coolWeather.Count; i++)
                         {
                             message += coolWeather[i].date.ToString() + ";   Wind speed: " + coolWeather[i].windspd +
-                                "   Gust " + coolWeather[i].gust + ";   Wind direction: " + coolWeather[i].winddir + ".";
+                                "   Gust " + coolWeather[i].gust + ";   Wind direction: " + coolWeather[i].winddir + "."+"<br/>";
                         }
                         try
                         {

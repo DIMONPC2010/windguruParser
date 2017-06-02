@@ -46,6 +46,7 @@
             this.btApply = new System.Windows.Forms.Button();
             this.tbGust = new System.Windows.Forms.TextBox();
             this.lbGust = new System.Windows.Forms.Label();
+            this.lbnextUpdate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWeatherViewer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,11 +187,20 @@
             this.lbGust.TabIndex = 9;
             this.lbGust.Text = "Gust";
             // 
+            // lbnextUpdate
+            // 
+            this.lbnextUpdate.AutoSize = true;
+            this.lbnextUpdate.Location = new System.Drawing.Point(6, 355);
+            this.lbnextUpdate.Name = "lbnextUpdate";
+            this.lbnextUpdate.Size = new System.Drawing.Size(0, 13);
+            this.lbnextUpdate.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 349);
+            this.ClientSize = new System.Drawing.Size(745, 374);
+            this.Controls.Add(this.lbnextUpdate);
             this.Controls.Add(this.tbGust);
             this.Controls.Add(this.lbGust);
             this.Controls.Add(this.btApply);
@@ -231,6 +241,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Label lbnextUpdate;
     }
 }
 

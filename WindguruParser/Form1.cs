@@ -38,7 +38,7 @@ namespace WindguruParser
             m_dbConn = new SQLiteConnection();
             m_sqlCmd = new SQLiteCommand();
             dbFileName = "WindguruDB";
-            db = new DbInit(dbFileName, m_dbConn, m_sqlCmd, dgvWeatherViewer);
+            db = new DbInit(dbFileName, m_dbConn, m_sqlCmd, dgvWeatherViewer, lbnextUpdate);
             Email = "";
             formatter = new XmlSerializer(typeof(WindData));
 
@@ -72,7 +72,9 @@ namespace WindguruParser
             Regex regex = new Regex(pattern);
             string result = regex.Replace(s, target);
             if (result == " ")
-                Email=s;
+                Email = s;
+            else
+                Email = "";
         }
 
 
@@ -142,7 +144,7 @@ namespace WindguruParser
                 if (WindDirection == "")
                     MessageBox.Show("Enter Wind direction. (Example - \"NE\")");
                 if (WindSpeed == "")
-                    MessageBox.Show("Enter Wind direction. (Example - \"4-5\")");
+                    MessageBox.Show("Enter Wind Speed. (Example - \"4-5\")");
                 if (Gust == "")
                     MessageBox.Show("Enter Gust. (Example - \"4-5\")");
                 if (Email == "")

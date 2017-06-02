@@ -15,11 +15,11 @@ namespace WindguruParser
     {
         public Thread thread { get; private set; }
         DbInitData dbInitData;
-        public DbInit(String dbFileName, SQLiteConnection m_dbConn, SQLiteCommand m_sqlCmd, DataGridView m_dgv)
+        public DbInit(String dbFileName, SQLiteConnection m_dbConn, SQLiteCommand m_sqlCmd, DataGridView m_dgv, Label m_lb)
         {
             thread = new Thread(this.InitDataBase);
             thread.IsBackground = true;
-            dbInitData = new DbInitData(dbFileName, m_dbConn, m_sqlCmd, m_dgv);
+            dbInitData = new DbInitData(dbFileName, m_dbConn, m_sqlCmd, m_dgv, m_lb);
             thread.Start(dbInitData);//передача параметра в поток
         }
         private void InitDataBase(object dbInitData)
@@ -122,7 +122,7 @@ namespace WindguruParser
                                 data.m_dgv.BeginInvoke((MethodInvoker)(() => data.m_dgv.Rows.Add(dTable.Rows[i].ItemArray)));
                                 Thread.Sleep(60);
                             }
-
+                            data.m_lb.BeginInvoke((MethodInvoker)(() => data.m_lb.Text = "Database successfully updated. Next weather update at: " + updateNext.ToString()));
                         }
                         else
                             MessageBox.Show("Database is empty");

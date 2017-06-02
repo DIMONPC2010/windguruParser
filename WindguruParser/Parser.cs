@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace WindguruParser
 {
@@ -73,14 +74,21 @@ namespace WindguruParser
         }
         static public List<Weather> ParseWeather(ref DateTime updateNext)
         {
-            HttpWebRequest req = WebRequest.Create("https://www.windguru.cz/fcst.php?s=87721&") as HttpWebRequest;
-            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-            StreamReader stream = new StreamReader(resp.GetResponseStream());
-            String responseString = stream.ReadToEnd();
-
-            //Thread.Sleep(100);
+            String responseString = "0";
+            try
+            {
+                HttpWebRequest req = WebRequest.Create("https://www.windguru.cz/fcst.php?s=87721&") as HttpWebRequest;
+                HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+                StreamReader stream = new StreamReader(resp.GetResponseStream());
+                responseString = stream.ReadToEnd();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
             String data = responseString.Substring(responseString.IndexOf("\"TMP"));
+
             updateNext = DateTime.ParseExact(data.Substring(data.IndexOf("update_next") + 14, 19), "yyyy-MM-dd HH:mm:ss", null);
             //updateNext = new DateTime(updateNext.Year, updateNext.Month, updateNext.Day, updateNext.Hour + 3, updateNext.Minute, updateNext.Second);
             data = data.Remove(data.IndexOf("\"hours"));
